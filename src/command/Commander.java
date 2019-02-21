@@ -28,12 +28,12 @@ public class Commander {
 			
 		case REGISTER: case SIGNUP:
 			cmd = new CreateCommand(pxy);
-			System.out.println("커멘더 액션 REGISTER");
+			System.out.println("커멘더 액션 REGISTER, SIGNUP");
 			break;
 			
 		case ACCESS: case SIGNIN:
 			cmd = new ExistCommand(pxy);
-			System.out.println("커멘더 액션 ACCESS");
+			System.out.println("커멘더 액션 ACCESS, SIGNIN");
 			break;	
 
 		case CUST_LIST: 
@@ -54,8 +54,18 @@ public class Commander {
 		case CUST_FILE_UPLOAD: 
 			cmd = new FileCommand(pxy);
 			System.out.println("커멘더 액션 CUS_FILE_UPLOAD");
-			break;		
-				
+			break;	
+			
+		case CUST_DELETE: 
+			cmd = new DeleteCommand (pxy);
+			System.out.println("커멘더 액션 CUST_DELETE");
+			break;
+		
+		case PRODUCT_LIST: 
+			cmd = new ProductListCommand(pxy);
+			System.out.println("커멘더 액션 PRODUCT_LIST");
+			break;
+			
 		default:
 			break;
 		}

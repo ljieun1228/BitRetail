@@ -8,31 +8,30 @@
 }
 #content_2{
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 7;
 }
-
 
 /* content */
 
 #reg_item2{
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 7;
 }
 #reg_item4{
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 7;
 }
 #reg_item6{
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 7;
 }
 #reg_item8{
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 7;
 }
 #reg_item10{
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: 7;
 }
 #reg_item11{
     grid-column-start: 1;
@@ -40,7 +39,7 @@
 }
 #reg_item12{
     grid-column-start: 3;
-    grid-column-end: 5;
+    grid-column-end: 7;
 }
 #form input[type=text], select {
   width: 100%;

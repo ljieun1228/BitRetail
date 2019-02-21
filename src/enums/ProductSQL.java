@@ -1,6 +1,6 @@
 package enums;
 
-public enum CustomerSQL {
+public enum ProductSQL {
 	 SIGNUP, SIGNIN, LIST, ROW_COUNT, PHONE, DETAIL, UPDATE, UPDATE_PROFILE_IMG, CUST_DELETE;
 
 	@Override
@@ -21,8 +21,8 @@ public enum CustomerSQL {
 			
 			  query.append("SELECT T2.*\r\n" + 
 					"FROM(SELECT ROWNUM R2,T.*\r\n" + 
-					"    FROM (SELECT ROWNUM RNUM ,C.* \r\n" + 
-					"          FROM CUSTOMERS C  \r\n" + 
+					"    FROM (SELECT ROWNUM RNUM ,P.* \r\n" + 
+					"          FROM PRODUCTS P  \r\n" + 
 					"          ORDER BY RNUM DESC) T) T2  \r\n" + 
 					"WHERE R2 BETWEEN ? AND ?");
 			

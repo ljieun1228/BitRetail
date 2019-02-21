@@ -22,7 +22,6 @@ public class CreateCommand extends Command {
 		switch (Action.valueOf(request.getParameter("cmd").toUpperCase())) {
 		
 		case SIGNUP:
-			System.out.println("  cmd가 signup  ");
 			CustomerDTO cus = new CustomerDTO();
 			cus.setCustomerId(request.getParameter("cusId"));
 			cus.setCustomerPw(request.getParameter("cusPw"));
@@ -31,7 +30,8 @@ public class CreateCommand extends Command {
 			cus.setCity(request.getParameter("city"));
 			cus.setPostalCode(request.getParameter("pCode"));
 			cus.setSsn(request.getParameter("ssn"));
-			System.out.println(cus);
+			cus.setPhone(request.getParameter("phone"));
+			cus.setGender(request.getParameter("gender"));
 			CustomerServiceImpl.getInstance().registCustomer(cus);
 			break;
 			

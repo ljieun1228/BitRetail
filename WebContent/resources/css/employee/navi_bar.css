@@ -6,7 +6,7 @@
   padding: 0;
   overflow: hidden;
   grid-column-start: 1;
-  grid-column-end: 5;
+  grid-column-end: 7;
 }
 #navi_bar li {
   float: inherit;

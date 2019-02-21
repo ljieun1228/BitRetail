@@ -21,7 +21,7 @@
 			switch(dest){
 			case "NONE" :
 				%>
-				<%@include file="accountPage.jsp"%>
+				<%@include file="account-page.jsp"%>
 				<%
 			break;
 			case "open-form":

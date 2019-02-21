@@ -36,6 +36,16 @@
   <span class="input-group-addon" id="basic-addon7">우편번호</span>
   <input type="text" class="form-control" placeholder="우편번호를 입력해주세요." aria-describedby="basic-addon7" id="pCode"  name="pCode">
   </div>
+    <div class="input-group">
+  <span class="input-group-addon" id="basic-addon8">핸드폰번호</span>
+  <input type="text" class="form-control" placeholder="핸드폰번호를 입력해주세요." aria-describedby="basic-addon8" id="phone"  name="phone">
+  </div>
+    <div class="input-group">
+  <span class="input-group-addon" id="basic-addon9">성별</span>
+  <input type="text" class="form-control" placeholder="성별을 입력해주세요." aria-describedby="basic-addon9" id="gender"  name="gender">
+  </div>
+    <div class="input-group">
+
   <button type="button" id = "confirm_btn" class="btn btn-default btn-lg">
  		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 확 인 
   </button>

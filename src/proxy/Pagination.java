@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import lombok.Data;
 import service.CustomerServiceImpl;
+import service.ProductServiceImpl;
 
 @Data
 public class Pagination implements Proxy {
@@ -11,7 +12,7 @@ public class Pagination implements Proxy {
 	private int pageNum, pageSize,
 				blockNum, blockSize, 
 				startPage, endPage, 
-				prevBlock, nextBlock, rowCount, 
+				prevBlock, nextBlock, rowCount, proRowCount,
 				startRow, endRow, pageCount;
 	private boolean existPrev, existNext;
 
@@ -38,7 +39,6 @@ public class Pagination implements Proxy {
 
         rowCount = CustomerServiceImpl.getInstance().countCustomers(null);
         System.out.println("rowCount: "+ rowCount);
-
         
         //endRow, startRow
         

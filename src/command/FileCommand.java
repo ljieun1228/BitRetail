@@ -25,7 +25,6 @@ public class FileCommand extends Command {
 		switch (Action.valueOf(request.getParameter("cmd").toUpperCase())) {
 
 		case CUST_FILE_UPLOAD:
-			System.out.println("::파일커맨드 파일업로드 진입::");
 			ImgProxy ipxy = new ImgProxy();
 			ipxy.carryOut(request);
 			

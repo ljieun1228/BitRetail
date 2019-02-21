@@ -35,25 +35,6 @@ public class UpdateCommand extends Command {
 		if(!request.getParameter("phone").equals(""))
 			cus.setPhone(request.getParameter("phone"));
 		
-
-		/*String phone = request.getParameter("phone");
-		String city = request.getParameter("city");
-		String address = request.getParameter("address");
-		String postalCode = request.getParameter("postal_code");
-		String password = request.getParameter("password");
-		
-		phone = (phone.equals(""))?cus.getPhone():request.getParameter("phone");
-		city = (city.equals(""))?cus.getCity():request.getParameter("city");
-		address = (address.equals(""))?cus.getAddress():request.getParameter("address");
-		postalCode = (postalCode.equals(""))?cus.getPostalCode():request.getParameter("postalCode");
-		password = (password.equals(""))?cus.getCustomerPw():request.getParameter("password");
-
-		cus.setPhone(phone); 
-		cus.setCity(city); 
-		cus.setAddress(address); 
-		cus.setPostalCode(postalCode); 
-		cus.setCustomerPw(password);*/
-
 		System.out.println("수정하려는 회원의 정보 "+cus.toString());
 		
 		CustomerServiceImpl.getInstance().modifyCustomer(cus);

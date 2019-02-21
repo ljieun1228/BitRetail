@@ -13,12 +13,12 @@
 
 	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">아이디 </span>
-	  <input type="text" id="custId" name="custId" class="form-control" placeholder="아이디를 입력하세요" aria-describedby="basic-addon1">
+	  <input type="text" id="custId" name="custId" class="form-control" placeholder="아이디를 입력하세요" aria-describedby="basic-addon1" value="test">
 	</div><br />
 	
 	<div class="input-group">
 	  <span class="input-group-addon" id="basic-addon1">비밀번호</span>
-	  <input type="text" id="custPw" name="custPw"  class="form-control" placeholder="1" aria-describedby="basic-addon1">
+	  <input type="text" id="custPw" name="custPw"  class="form-control" placeholder="비밀번호를 입력하세요" aria-describedby="basic-addon1" value="password">
 	</div><br />	   
 	 
 	<button type="button" id = "confirm_btn" class="btn btn-default btn-lg">

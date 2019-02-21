@@ -24,8 +24,6 @@ public class ImageDAOImpl implements ImageDAO {
 	}
 	public static ImageDAOImpl getInstance() {return instance;}
 	
-	
-	
 	@Override
 	public void insertImage(ImgDTO img) {
 		try {
@@ -102,6 +100,4 @@ public class ImageDAOImpl implements ImageDAO {
 		// TODO Auto-generated method stub
 		
 	}
-
-	
 }

@@ -15,7 +15,7 @@ public enum EmployeeSQL {
 					+ "PHOTO, "
 					+ "NOTES)"
 					+ " VALUES("
-					+ " EMP_SEQ.NEXTVAL,?,?,?,?,?)");
+					+ " EMP_SEQ.NEXTVAL,?,?,?,'1020',?)");
 			break;
 	
 		case COUNT:

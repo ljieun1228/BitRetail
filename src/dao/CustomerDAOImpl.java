@@ -3,6 +3,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -37,12 +38,15 @@ public class CustomerDAOImpl implements CustomerDAO {
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			System.out.println("입력될 sql" + sql);
 			stmt.setString(1, cus.getCustomerId());
-			stmt.setString(2, cus.getCustomerPw());
-			stmt.setString(3, cus.getCustomerName());
+			stmt.setString(2, cus.getCustomerName());
+			stmt.setString(3, cus.getCustomerPw());
 			stmt.setString(4, cus.getAddress());
 			stmt.setString(5, cus.getCity());
 			stmt.setString(6, cus.getPostalCode());
 			stmt.setString(7, cus.getSsn());
+			stmt.setString(8, cus.getGender());
+			stmt.setString(9, cus.getPhone());
+
 			int rs = stmt.executeUpdate();
 			System.out.println((rs == 1) ? "입력성공" : "입력 실패");
 		} catch (Exception e) {
@@ -117,12 +121,9 @@ public class CustomerDAOImpl implements CustomerDAO {
 		CustomerDTO temp = null;
 		try {
 			String sql = CustomerSQL.DETAIL.toString();
-			System.out.println("cus전체 정보"+cus.toString());
-
 			System.out.println(":::입력된 쿼리값:::" + sql);
 			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, String.valueOf(cus.getCustomerId()));
-			System.out.println("cus.getCustomerId()"+cus.getCustomerId());
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				temp = new CustomerDTO();
@@ -146,24 +147,24 @@ public class CustomerDAOImpl implements CustomerDAO {
 	public CustomerDTO selectCustomer(CustomerDTO cus) {
 		CustomerDTO temp = null;
 		try {
-			String sql = (cus.getCustomerPw() == null) ?
-					 CustomerSQL.DETAIL.toString() :
-					 CustomerSQL.SIGNIN.toString() 
-				;				PreparedStatement stmt = DatabaseFactory.createDatabase(Vendor.ORACLE).getConnection().prepareStatement(sql);
+			String sql = (cus.getCustomerPw() == null) ?CustomerSQL.DETAIL.toString() : CustomerSQL.SIGNIN.toString() ;				
+			System.out.println(":::입력된 쿼리값:::" + sql);
+			PreparedStatement stmt = conn.prepareStatement(sql);
 			stmt.setString(1, cus.getCustomerId());
 			if(cus.getCustomerPw() != null) {
 				stmt.setString(2, cus.getCustomerPw());
-			}			
+			}
 			ResultSet rs = stmt.executeQuery();
-			while (rs.next()) {
+			while(rs.next()) {
 				temp = new CustomerDTO();
-				temp.setAddress(rs.getString("ADDRESS"));
-				temp.setCity(rs.getString("CITY"));
 				temp.setCustomerId(rs.getString("CUSTOMER_ID"));
 				temp.setCustomerPw(rs.getString("CUST_PW"));
 				temp.setCustomerName(rs.getString("CUSTOMER_NAME"));
-				temp.setPostalCode(rs.getString("POSTAL_CODE"));
+				temp.setPhoto(rs.getString("PHOTO"));
 				temp.setSsn(rs.getString("SSN"));
+				temp.setCity(rs.getString("CITY"));
+				temp.setAddress(rs.getString("ADDRESS"));
+				temp.setPostalCode(rs.getString("POSTAL_CODE"));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -184,7 +185,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("DAO토탈카운트::" + count);
 		return count;
 	}
 
@@ -207,7 +207,6 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
 	public void updateCustomer(CustomerDTO cus) {
-		System.out.println("UPDATE UPDATE UPDATE UPDATE" );
 		try {
 			String sql = CustomerSQL.UPDATE.toString();
 			PreparedStatement stmt = conn.prepareStatement(sql);
@@ -227,7 +226,18 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	@Override
 	public void deleteCustomer(CustomerDTO cus) {
+		String sql = CustomerSQL.CUST_DELETE.toString();
+		try {
+			PreparedStatement stmt = conn.prepareStatement(sql);
+			stmt.setString(1, cus.getCustomerId());
+			int rs = stmt.executeUpdate();
+			System.out.println((rs == 1) ? "삭제 성공" : "삭제 실패");	
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
+		
+		
 	}
 
 	@Override

@@ -18,7 +18,7 @@ public class HomeController extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		System.out.println("홈서블릿으로 들어옴");
+		System.out.println("홈서블릿");
 		
 		HttpSession session = request.getSession(); 
 		session.setAttribute("ctx", request.getContextPath());

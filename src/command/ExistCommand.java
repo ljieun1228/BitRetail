@@ -65,7 +65,6 @@ public class ExistCommand extends Command {
 			cus.setCustomerId(request.getParameter("custId"));
 			cus.setCustomerPw(request.getParameter("custPw"));
 			cus = CustomerServiceImpl.getInstance().retrieveCustomer(cus);
-			
 			if(cus != null) {
 				System.out.println("로그인성공");
 				session.setAttribute("customer", cus);
@@ -75,7 +74,6 @@ public class ExistCommand extends Command {
 				super.setPage("signin");
 				super.execute();
 			}
-			System.out.println(":::ExistCommand 내부 :::" + super.getView());
 			break;
 			
 		default:

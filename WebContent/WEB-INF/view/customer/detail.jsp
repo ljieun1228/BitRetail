@@ -6,11 +6,18 @@
 
 <link rel="stylesheet" href="${css}/customer/detail.css" />
 
-<div class="grid-item" id="navi_bar">
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container" id="navi_bar">
+   	<ul>
+		<li><a href="home.do">홈</a></li>
+	</ul>
+  </div>
+</nav>
+
+<%-- <div class="grid-item" id="navi_bar">
 	<jsp:include page="../employee/navi_bar.jsp" />
-
 </div>
-
+ --%>
 <div class="grid-item" id="side_bar">
 			<br />
 		    <form id="form" >   
@@ -66,13 +73,21 @@
 			<div class="btn-group" role="group" aria-label="...">
 				<button type="button" id="update_btn" class="btn btn-default">수정</button>
 			</div>
+			<div class="btn-group" role="group" aria-label="...">
+				<button type="button" id="delete_btn" class="btn btn-default">회원 탈퇴</button>
+			</div>
 	</div>
 
 <script>
 	$('#update_btn').click(function() {
 		location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customerId=${cus.customerId}');
 			});
-
+	
+	$('#delete_btn').click(function() {
+		alert('회원 탈퇴 되었습니다.');
+		location.assign('${ctx}/customer.do?cmd=cust_delete&page=main&customerId=${cus.customerId}');
+			});
+	
 	$('#file_upload_btn').click(function() {
 		alert('사진업로드 버튼 클릭!');
 				$('#form')
