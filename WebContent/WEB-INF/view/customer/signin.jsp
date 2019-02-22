@@ -37,7 +37,7 @@
 </div>
 <jsp:include page="../home/bottom.jsp"/>
 <script>
-$('#confirm_btn').click(function(){
+$('#confirm_btn').click(()=>{
 	var empno = $('#empno').val();
 	var name = $('#name').val();
 	$('#form')
@@ -45,7 +45,7 @@ $('#confirm_btn').click(function(){
 	.submit();
 });
 
-$('#cancel_btn').click(function(){
+$('#cancel_btn').click(()=>{
 	alert('취소버튼클릭!!');
 	});
 </script>

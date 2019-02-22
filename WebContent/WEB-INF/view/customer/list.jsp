@@ -75,7 +75,7 @@
 <script>
 	$('.page')
 			.click(
-					function() {
+					()=> {
 						location.assign('${ctx}/customer.do?cmd=cust_list&page=list&page_num='
 										+ $(this).text());
 					});

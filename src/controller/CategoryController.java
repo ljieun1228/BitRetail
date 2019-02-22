@@ -10,19 +10,18 @@ import javax.servlet.http.HttpServletResponse;
 
 import command.Carrier;
 import command.Receiver;
-import service.CustomerServiceImpl;
+import service.CategoryServiceImpl;
 
 
-//서블릿으로 생성해 줄것 ~~
-@WebServlet("/customer.do")
-public class CustomerController extends HttpServlet {
+@WebServlet("/category.do")
+public class CategoryController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	CustomerServiceImpl cService = CustomerServiceImpl.getInstance(); 
+  
+	CategoryServiceImpl cService = CategoryServiceImpl.getInstance(); 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("======> 1번 CustomerController");		
+		System.out.println("======> 1번 CategoryController");		
 		Receiver.init(request, response);
 		Carrier.forward(request, response);
 	}

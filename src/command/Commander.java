@@ -36,10 +36,10 @@ public class Commander {
 			System.out.println("커멘더 액션 ACCESS, SIGNIN");
 			break;	
 
-		case CUST_LIST: 
+		case  CUST_LIST: case CATE_LIST: 
 			cmd = new ListCommand(pxy);
-			System.out.println("커멘더 액션 CUST_LIST");
-			break;	
+			System.out.println("커멘더 액션 PRODUCT_LIST");
+			break;
 			
 		case CUST_RETRIEVE: 
 			cmd = new RetrieveCommand(pxy);
@@ -61,10 +61,10 @@ public class Commander {
 			System.out.println("커멘더 액션 CUST_DELETE");
 			break;
 		
-		case PRODUCT_LIST: 
+	/*	case PRODUCT_LIST: 
 			cmd = new ProductListCommand(pxy);
 			System.out.println("커멘더 액션 PRODUCT_LIST");
-			break;
+			break;*/
 			
 		default:
 			break;

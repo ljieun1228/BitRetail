@@ -59,7 +59,7 @@
 </div>
 <jsp:include page="../home/bottom.jsp"/>
 <script>
-$('#confirm_btn').click(function(){
+$('#confirm_btn').click(()=>{
 	var cusId = $('#cusId').val();
 	var cusName = $('#cusName').val();
 	var contactName = $('#contactName').val();
@@ -70,7 +70,7 @@ $('#confirm_btn').click(function(){
 	.attr('action', '${ctx}/customer.do')
 	.submit();
 });
-$('#cancel_btn').click(function(){
+$('#cancel_btn').click(()=>{
 	alert('취소버튼클릭!!');
 	});
 </script>

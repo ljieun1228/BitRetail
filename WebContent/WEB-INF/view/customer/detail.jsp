@@ -6,18 +6,10 @@
 
 <link rel="stylesheet" href="${css}/customer/detail.css" />
 
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container" id="navi_bar">
-   	<ul>
-		<li><a href="home.do">홈</a></li>
-	</ul>
-  </div>
-</nav>
-
-<%-- <div class="grid-item" id="navi_bar">
+ <div class="grid-item" id="navi_bar">
 	<jsp:include page="../employee/navi_bar.jsp" />
 </div>
- --%>
+
 <div class="grid-item" id="side_bar">
 			<br />
 		    <form id="form" >   
@@ -79,16 +71,16 @@
 	</div>
 
 <script>
-	$('#update_btn').click(function() {
+	$('#update_btn').click(()=> {
 		location.assign('${ctx}/customer.do?cmd=cust_retrieve&page=update&customerId=${cus.customerId}');
 			});
 	
-	$('#delete_btn').click(function() {
+	$('#delete_btn').click(()=> {
 		alert('회원 탈퇴 되었습니다.');
 		location.assign('${ctx}/customer.do?cmd=cust_delete&page=main&customerId=${cus.customerId}');
 			});
 	
-	$('#file_upload_btn').click(function() {
+	$('#file_upload_btn').click(()=> {
 		alert('사진업로드 버튼 클릭!');
 				$('#form')
 				.attr('method', 'post')

@@ -1,7 +1,7 @@
 @charset "UTF-8";
 #side_menu{
     grid-column-start: 1;
-    grid-column-end: 2;
+    grid-column-end: 2;    
 }
 #content{
     grid-column-start: 2;

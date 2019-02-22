@@ -3,7 +3,6 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -23,11 +22,10 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	private static CustomerDAOImpl instance = new CustomerDAOImpl();
 	Connection conn;
-	public CustomerDAOImpl() {
+	private CustomerDAOImpl() {
 		conn = DatabaseFactory
 				.createDatabase(Vendor.ORACLE)
 				.getConnection();
-		
 	}
 	public static CustomerDAOImpl getInstance() {return instance;}
 

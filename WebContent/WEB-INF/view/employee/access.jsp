@@ -2,9 +2,7 @@
    pageEncoding="UTF-8"%>
 <jsp:include page="../home/top.jsp"/>
 <link rel="stylesheet" href="${css}/employee/access.css" />
-    <div class="grid-item" id="navi_bar">  
-<jsp:include page="navi_bar.jsp"/>
-    </div>
+
 <div class="grid-item" id="content_1">
 	<h1><font style="font-size: 30px">사원 접속</font></h1>
 </div>
@@ -25,7 +23,7 @@
 </div>
 <jsp:include page="../home/bottom.jsp"/>
 <script>
-$('#confirm_btn').click(function(){
+$('#confirm_btn').click(()=>{
 	var empno = $('#empno').val();
 	var name = $('#name').val();
 	$('#form')

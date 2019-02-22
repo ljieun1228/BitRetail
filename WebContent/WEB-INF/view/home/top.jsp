@@ -18,7 +18,7 @@
 <script	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="${css}employee/access.css" />
-<link rel="stylesheet" href="${css}employee/navi-bar.css" />
+<link rel="stylesheet" href="${css}employee/navi_bar.css" />
 <link rel="stylesheet" href="${css}employee/register.css" />
 <link rel="stylesheet" href="${css}customer/list.css" />
 

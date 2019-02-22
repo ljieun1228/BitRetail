@@ -51,14 +51,14 @@
 </form>
 </div>
 <script>
-$('#confirm_btn').click(function(){
+$('#confirm_btn').click(()=>{
 	var form = $('#form');
 	form.attr('action','${ctx}/customer.do');
 	form.attr('method','post');
 	form.submit();
 });
 
-$('#confirm_btn').click(function(){
+$('#confirm_btn').click(()=>{
 	alert('확인!');
 	});
 

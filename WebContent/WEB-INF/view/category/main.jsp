@@ -53,7 +53,7 @@
 
 <jsp:include page="../home/bottom.jsp" />
 <script>
-$('#nav7').click(function(){
+$('#nav7').click(()=>{
 	alert('마이페이지 클릭!!');
 	});
 
